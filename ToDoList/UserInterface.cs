@@ -71,12 +71,15 @@ namespace ToDoList
             //TODO print to-do list first
 
             Console.WriteLine();
-            Console.WriteLine("Please pick an option: ");
-            Console.WriteLine("1 - Preview To-Do List");
-            Console.WriteLine("2 - Mark a Task as Completed");
-            Console.WriteLine("3 - Add to List");
-            Console.WriteLine("4 - Remove from List");
-            Console.WriteLine("E - Exit the Program");
+            Console.WriteLine(" ______________________________");
+            Console.WriteLine("|    Please pick an option:    |");
+            Console.WriteLine("| 1 - Preview To-Do List       |");
+            Console.WriteLine("| 2 - Mark a Task as Completed |");
+            Console.WriteLine("| 3 - Add to List              |");
+            Console.WriteLine("| 4 - Remove from List         |");
+            Console.WriteLine("| E - Exit the Program         |");
+            Console.WriteLine("|______________________________|");
+            Console.WriteLine();
         }
 
         private void PreviewToDoList()
@@ -99,7 +102,7 @@ namespace ToDoList
 
                         char pad = ' ';
                         Console.WriteLine();
-                        Console.WriteLine("TASK| " + t.Title.PadRight(30, pad) + t.Time.ToString().PadRight(16, pad) + "                " + comp + "\n" + "DESCRIPTION| " + t.Description);
+                        Console.WriteLine("TASK| " + t.Title.ToUpper().PadRight(30, pad) + t.Time.ToString().PadRight(16, pad) + "                " + comp + "\n" + "DESCRIPTION| " + t.Description);
                         Console.WriteLine();
                         Console.WriteLine("-----------------------------------------------------------------------------");
                     }
@@ -135,7 +138,10 @@ namespace ToDoList
                     Console.WriteLine("Please enter a valid date in the provided format");
                 }
             }
-            Console.WriteLine("Successfully added task");
+            Console.Clear();
+            Console.WriteLine("Successfully added task - Press enter");
+            Console.ReadLine();
+            Console.Clear();
 
             task.Completion = 0;
 
@@ -145,9 +151,13 @@ namespace ToDoList
         private void ToDoListRemove()
         {
             Console.Clear();
-            Console.WriteLine("Please select a removal option: ");
-            Console.WriteLine("1 - Remove a task by title");
-            Console.WriteLine("2 - Remove all tasks from the list (Complete reset)");
+            Console.WriteLine();
+            Console.WriteLine(" _____________________________________________________ ");
+            Console.WriteLine("|    Please select a removal option:                  |");
+            Console.WriteLine("| 1 - Remove a task by title                          |");
+            Console.WriteLine("| 2 - Remove all tasks from the list (Complete reset) |");
+            Console.WriteLine("|_____________________________________________________|");
+            Console.WriteLine();
             string userInput = Console.ReadLine();
 
             switch (userInput)
