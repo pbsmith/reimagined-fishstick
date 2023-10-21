@@ -1,0 +1,25 @@
+/* Deployment script for ToDoList */
+USE master;
+GO
+
+IF DB_ID('ToDoList') IS NOT NULL
+BEGIN
+	ALTER DATABASE ToDoList SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+	DROP DATABASE ToDoList;
+END
+GO
+
+CREATE DATABASE ToDoList;
+GO
+
+USE ToDoList
+GO
+
+CREATE TABLE DB_List (
+    id   INT NOT NULL IDENTITY (1,1),
+	title NVARCHAR(60) NOT NULL,
+	[description] NVARCHAR(300),
+	[time] DATETIME NOT NULL,
+	is_completed BIT NOT NULL,
+	CONSTRAINT PK_id PRIMARY KEY (id)
+);

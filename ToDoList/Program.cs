@@ -1,66 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using ToDoList;
 
-using System.Net.Security;
-using System.Threading.Channels;
-using ToDoList;
-
-namespace ProgramMain;
-    class Program
+namespace ToDoList
 {
-    static void Main(string[] args)
+    public class Program
     {
-        UserInterface ui = new UserInterface();
-        ui.Start();
-    }
-
-    public class Solution
-    {
-        public bool IsValid(string s)
+        public static void Main()
         {
-            int counter = 0;
-            for (int i = 0; i < s.Length; i++)
-            {
-                if (s[i] == '(')
-                {
-                    for (int j = i; i < (s.Length - i); j++)
-                    {
-                        if (s[i + 1] == ')')
-                        {
-                            counter++;
-                        }
-                    }
-                }
-                if (s[i] == '[')
-                {
-                    for (int j = i; i < (s.Length - i); j++)
-                    {
-                        if (s[i + 1] == ']')
-                        {
-                            counter++;
-                        }
-                    }
-                }
-                if (s[i] == '{')
-                {
-                    for (int j = i; i < (s.Length - i); j++)
-                    {
-                        if (s[i + 1] == '}')
-                        {
-                            counter++;
-                        }
-                    }
-                }
-            }
-            if (counter == s.Length / 2)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            UserInterface ui = new UserInterface();
+            ui.Start();
         }
     }
-
-
 }

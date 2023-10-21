@@ -6,21 +6,13 @@ using System.Threading.Tasks;
 
 namespace ToDoList
 {
-    public abstract class Task
+    public class Task
     {
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public int UrgencyLevel { get; set; }
-        public int Time { get; set; }
-
-        public Task(string title, string description, int urgencyLevel, int time)
-        {
-            Title = title;
-            Description = description;
-            UrgencyLevel = urgencyLevel;
-            Time = time;
-        }
-
+        public DateTime Time { get; set; }
+        public int Completion { get; set; }
 
 
 
