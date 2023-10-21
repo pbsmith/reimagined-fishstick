@@ -98,7 +98,9 @@ namespace ToDoList
                         string comp = CompletedCheck(t);
 
                         char pad = ' ';
+                        Console.WriteLine();
                         Console.WriteLine("TASK| " + t.Title.PadRight(30, pad) + t.Time.ToString().PadRight(16, pad) + "                " + comp + "\n" + "DESCRIPTION| " + t.Description);
+                        Console.WriteLine();
                         Console.WriteLine("-----------------------------------------------------------------------------");
                     }
                 }
@@ -114,6 +116,7 @@ namespace ToDoList
             Task task = new Task();
 
             Console.WriteLine("Please enter a task title: ");
+
             task.Title = Console.ReadLine();
 
             Console.WriteLine("Please enter a task description: ");
